@@ -31,7 +31,7 @@ public class QuizActivity extends AppCompatActivity {
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Toast mFalseToast = Toast.makeText(QuizActivity.this,
                                                    R.string.incorrect_toast,
                                                    Toast.LENGTH_SHORT);
