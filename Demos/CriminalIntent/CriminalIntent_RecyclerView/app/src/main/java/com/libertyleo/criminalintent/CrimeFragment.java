@@ -14,11 +14,12 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 /**
- * Created by Leo_Lei on 8/22/17.
+ * Created by Leo_Lei on 8/17/17.
  */
 
 public class CrimeFragment extends Fragment {
     private Crime mCrime;
+
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
@@ -33,7 +34,6 @@ public class CrimeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
-
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
