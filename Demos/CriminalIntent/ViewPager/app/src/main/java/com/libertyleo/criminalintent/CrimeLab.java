@@ -1,7 +1,6 @@
 package com.libertyleo.criminalintent;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +37,7 @@ public class CrimeLab {
     }
 
     public Crime getCrime(UUID id) {
-        int i = 0;
         for (Crime crime : mCrimes) {
-            Log.d("Tag", String.format("%d", ++i));
             if (crime.getId().equals(id)) {
                 return crime;
             }
