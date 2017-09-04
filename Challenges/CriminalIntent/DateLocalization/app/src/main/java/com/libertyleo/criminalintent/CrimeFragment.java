@@ -260,7 +260,8 @@ public class CrimeFragment extends Fragment {
     }
 
     private void updateDate() {
-        mDateButton.setText(mCrime.getDate().toString());
+        CharSequence date = DateFormat.format(getString(R.string.date_format), mCrime.getDate());
+        mDateButton.setText(date);
     }
 
     private String getCrimeReport() {
