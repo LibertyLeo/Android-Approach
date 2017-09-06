@@ -15,7 +15,7 @@ import java.util.List;
 public class BeatBox {
     private static final String TAG = "BeatBox";
 
-    private static final String SOUNDS_FOlDER = "sample_sounds";
+    private static final String SOUNDS_FOLDER = "sample_sounds";
     private AssetManager mAssets;
     private List<Sound> mSounds = new ArrayList<>();
 
@@ -28,7 +28,7 @@ public class BeatBox {
         String[] soundNames;
 
         try {
-            soundNames = mAssets.list(SOUNDS_FOlDER);
+            soundNames = mAssets.list(SOUNDS_FOLDER);
             Log.i(TAG, "Found " + soundNames.length + " sounds");
         } catch (IOException e) {
             Log.e(TAG, "Could not list assets", e);
@@ -36,7 +36,7 @@ public class BeatBox {
         }
 
         for (String filename : soundNames) {
-            String assetPath = SOUNDS_FOlDER + "/" + filename;
+            String assetPath = SOUNDS_FOLDER + "/" + filename;
             Sound sound = new Sound(assetPath);
             mSounds.add(sound);
         }
