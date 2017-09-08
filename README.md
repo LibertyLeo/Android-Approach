@@ -15,3 +15,5 @@ I classify the learning projects in [demos](/Demos) while the exercise projects 
 But the rest of challenges are to fulfill the info about the related widget and automatically info the event still needs to be done.
 
 9. Add seekbar for playback speed control.Though had added the seekbar, the function of control still not achieved yet. [SpeedControl](/Challenges/BeatBox/SpeedControl).
+
+10. Use Gson for json parse, add page for divided the data into several parts, automatically adjust the layout for wider or bigger screen.
