@@ -16,6 +16,8 @@ But the rest of challenges are to fulfill the info about the related widget and 
 
 9. Add seekbar for playback speed control.Though had added the seekbar, the function of control still not achieved yet. [SpeedControl](/Challenges/BeatBox/SpeedControl).
 
+(The flickr website needs the VPN to download data, with the coming error for network connection  
+closed by peer, all the challenge in this chapter remains undone.)
 10. Use Gson for json parse, add page for divided the data into several parts, automatically adjust the layout for wider or bigger screen.
-
 11. Preload and cache the downloaded image.
+12. Adjust the keyboard status when once finish searching. Add a tip progress bar for display the load progress.
