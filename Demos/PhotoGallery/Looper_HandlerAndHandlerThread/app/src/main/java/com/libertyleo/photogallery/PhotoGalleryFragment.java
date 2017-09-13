@@ -83,6 +83,7 @@ public class PhotoGalleryFragment extends Fragment {
 
         public PhotoHolder(View itemView) {
             super(itemView);
+
             mItemImageView = (ImageView) itemView.findViewById(R.id.item_image_view);
         }
 

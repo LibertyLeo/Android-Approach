@@ -82,8 +82,9 @@ public class PhotoGalleryFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_photo_gallery, menu);
 
-        final MenuItem searchItem = menu.findItem(R.id.menu_item_search);
+        MenuItem searchItem = menu.findItem(R.id.menu_item_search);
         final SearchView searchView = (SearchView) searchItem.getActionView();
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -138,6 +139,7 @@ public class PhotoGalleryFragment extends Fragment {
 
         public PhotoHolder(View itemView) {
             super(itemView);
+
             mItemImageView = (ImageView) itemView.findViewById(R.id.item_image_view);
         }
 

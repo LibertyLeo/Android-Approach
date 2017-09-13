@@ -58,6 +58,7 @@ public class PhotoGalleryFragment extends Fragment {
 
         public PhotoHolder(View itemView) {
             super(itemView);
+
             mTitleTextView = (TextView) itemView;
         }
 

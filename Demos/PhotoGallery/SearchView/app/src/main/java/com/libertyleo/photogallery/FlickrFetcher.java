@@ -23,6 +23,7 @@ import javax.net.ssl.SSLContext;
 
 public class FlickrFetcher {
     private static final String TAG = "FlickrFetcher";
+
     private static final String API_KEY = "aedc047bdf503897401ab4636a756330";
     private static final String FETCH_RECENTS_METHOD = "flickr.photos.getRecent";
     private static final String SEARCH_METHOD = "flickr.photos.search";
@@ -46,6 +47,7 @@ public class FlickrFetcher {
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException(connection.getResponseMessage() + ": with " + urlSpec);
             }
+
             int bytesRead = 0;
             byte[] buffer = new byte[1024];
             while ((bytesRead = in.read(buffer)) > 0) {
@@ -99,7 +101,6 @@ public class FlickrFetcher {
 
         return urlBuilder.build().toString();
     }
-
 
     private void parseItems(List<GalleryItem> items, JSONObject jsonBody) throws IOException, JSONException {
         JSONObject photosJsonObject = jsonBody.getJSONObject("photos");

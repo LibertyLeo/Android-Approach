@@ -21,7 +21,7 @@ public class ThumbnailDownloader<T> extends HandlerThread {
 
     private boolean mHasQuit = false;
     private Handler mRequestHandler;
-    private ConcurrentMap<T, String> mRequsetMap = new ConcurrentHashMap<>();
+    private ConcurrentMap<T, String> mRequestMap = new ConcurrentHashMap<>();
     private Handler mResponseHandler;
     private ThumbnailDownloaderListener<T> mThumbnailDownloaderListener;
 
@@ -35,7 +35,7 @@ public class ThumbnailDownloader<T> extends HandlerThread {
 
     public ThumbnailDownloader(Handler responseHandler) {
         super(TAG);
-        mRequestHandler = responseHandler;
+        mResponseHandler = responseHandler;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ThumbnailDownloader<T> extends HandlerThread {
             public void handleMessage(Message msg) {
                 if (msg.what == MESSAGE_DOWNLOAD) {
                     T target = (T) msg.obj;
-                    Log.i(TAG, "Got a request for URL: " + mRequsetMap.get(target));
+                    Log.i(TAG, "Got a request for URL: " + mRequestMap.get(target));
                     handleRequest(target);
                 }
             }
@@ -62,9 +62,9 @@ public class ThumbnailDownloader<T> extends HandlerThread {
         Log.i(TAG, "Got a URL: " + url);
 
         if (url == null) {
-            mRequsetMap.remove(target);
+            mRequestMap.remove(target);
         } else {
-            mRequsetMap.put(target, url);
+            mRequestMap.put(target, url);
             mRequestHandler.obtainMessage(MESSAGE_DOWNLOAD, target)
                     .sendToTarget();
         }
@@ -72,12 +72,12 @@ public class ThumbnailDownloader<T> extends HandlerThread {
 
     public void clearQueue() {
         mRequestHandler.removeMessages(MESSAGE_DOWNLOAD);
-        mRequsetMap.clear();
+        mRequestMap.clear();
     }
 
     private void handleRequest(final T target) {
         try {
-            final String url = mRequsetMap.get(target);
+            final String url = mRequestMap.get(target);
 
             if (url == null) {
                 return;
@@ -90,11 +90,11 @@ public class ThumbnailDownloader<T> extends HandlerThread {
             mResponseHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (mRequsetMap.get(target) != url || mHasQuit) {
+                    if (mRequestMap.get(target) != url || mHasQuit) {
                         return;
                     }
 
-                    mRequsetMap.remove(target);
+                    mRequestMap.remove(target);
                     mThumbnailDownloaderListener.onThumbnailDownloaded(target, bitmap);
                 }
             });
