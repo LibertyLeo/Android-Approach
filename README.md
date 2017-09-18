@@ -22,3 +22,4 @@ closed by peer, all the challenge in this chapter remains undone.)
 10. Use Gson for json parse, add page for divided the data into several parts, automatically adjust the layout for wider or bigger screen.
 11. Preload and cache the downloaded image.
 12. Adjust the keyboard status when once finish searching. Add a tip progress bar for display the load progress.
+13. Add the function of go back when pressed the return key, add the judgement for handling unusual scheme.
