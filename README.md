@@ -25,3 +25,5 @@ closed by peer, all the challenge in this chapter remains undone.)
 13. Add the function of go back when pressed the return key, add the judgement for handling unusual scheme.
 
 14. Make the movement of the sun reversible, add extra animations such as scaling regularly or rounded with the light. One more, add the click gesture for rising when its falling or falling when its rising.
+
+15. Add dialog for location permission as under different circumstance, add progress indicator for displaying progress.
