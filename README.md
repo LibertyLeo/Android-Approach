@@ -23,3 +23,5 @@ closed by peer, all the challenge in this chapter remains undone.)
 11. Preload and cache the downloaded image.
 12. Adjust the keyboard status when once finish searching. Add a tip progress bar for display the load progress.
 13. Add the function of go back when pressed the return key, add the judgement for handling unusual scheme.
+
+14. Make the movement of the sun reversible, add extra animations such as scaling regularly or rounded with the light. One more, add the click gesture for rising when its falling or falling when its rising.
